@@ -18,7 +18,9 @@ class RecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Recipes"
         loadAllOptions()
+        registerCells()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Buscar..."
@@ -26,6 +28,11 @@ class RecipesViewController: UIViewController {
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
         // Do any additional setup after loading the view.
+    }
+    private func registerCells(){
+        let identifier = "RecipesCell"
+        let cellNib = UINib(nibName: identifier, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: identifier)
     }
     
     internal func searchBarIsEmpty() -> Bool{
@@ -53,6 +60,7 @@ class RecipesViewController: UIViewController {
         let desserts = Recipes(title: "Desserts", imageFood: "https://png.pngtree.com/element_origin_min_pic/16/10/03/1857f22e5a165d6.jpg")
         let meast = Recipes(title: "Meats", imageFood: "https://static1.squarespace.com/static/5488b7b8e4b0563d578927fe/579bba96e3df28850502dc24/57a0cd569de4bbbd26c57de3/1470156163680/Shelburne+Meat+Market-97.JPG?format=1500w")
         let pasta = Recipes(title: "Pasta", imageFood: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Farfalle_Pasta.JPG")
+        
         allRecipes.append(shellfish)
         allRecipes.append(desserts)
         allRecipes.append(meast)
@@ -61,6 +69,7 @@ class RecipesViewController: UIViewController {
         recipes.append(desserts)
         recipes.append(meast)
         recipes.append(pasta)
+        
     }
 
 }
@@ -79,12 +88,12 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell: RecipesCell = (tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? RecipesCell)!
         if isFiltering(){
             let cellRow = recipes[indexPath.row]
-            cell.titleLbl.text = cellRow.title
-            cell.foodImg.sd_setImage(with: URL (string:cellRow.imageFood), placeholderImage: nil, completed: nil)
+            cell.trecipeLbl.text = cellRow.title
+            cell.recipeImg.sd_setImage(with: URL (string:cellRow.imageFood), placeholderImage: nil, completed: nil)
         }else{
             let cellgo = allRecipes[indexPath.row]
-            cell.titleLbl.text = cellgo.title
-            cell.foodImg.sd_setImage(with: URL (string:cellgo.imageFood), placeholderImage: nil, completed: nil)
+            cell.trecipeLbl.text = cellgo.title
+            cell.recipeImg.sd_setImage(with: URL (string:cellgo.imageFood), placeholderImage: nil, completed: nil)
         }
         return cell
     }

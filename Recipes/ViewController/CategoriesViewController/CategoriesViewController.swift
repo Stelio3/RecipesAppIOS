@@ -30,9 +30,6 @@ class CategoriesViewController: UIViewController {
         let identifier = "CategoriesCell"
         let cellNib = UINib(nibName: identifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: identifier)
-        /*let identifierI = "IconCell"
-        let cellNibI = UINib(nibName: identifierI, bundle: nil)
-        tableView.register(cellNibI, forCellReuseIdentifier: identifierI)*/
     }
     
 

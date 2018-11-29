@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,24 +20,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="264.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-n7-fQR">
-                        <rect key="frame" x="139" y="11" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-n7-fQR">
+                        <rect key="frame" x="16" y="11" width="288" height="48"/>
+                        <color key="backgroundColor" red="0.92171031475840026" green="0.52127664935815876" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="gBX-GJ-idN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31y-Qz-Cf2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="31y-Qz-Cf2">
+                        <rect key="frame" x="16" y="11" width="288" height="243"/>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="7LP-oh-vnr"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="trailing" secondItem="31y-Qz-Cf2" secondAttribute="trailing" id="9CL-7d-vAs"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XCu-PU-yQw"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="leading" secondItem="31y-Qz-Cf2" secondAttribute="leading" id="aBm-io-IJA"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vsV-jB-a0g"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="xNI-it-ew3"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="top" secondItem="31y-Qz-Cf2" secondAttribute="top" id="yUZ-Dl-6Be"/>
+                </constraints>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="RecipesCell"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="foodImg" destination="31y-Qz-Cf2" id="W4E-pc-cx5"/>
-                <outlet property="titleLbl" destination="n1t-n7-fQR" id="g6O-FX-gXn"/>
+                <outlet property="recipeImg" destination="31y-Qz-Cf2" id="Zln-ad-6aH"/>
+                <outlet property="trecipeLbl" destination="n1t-n7-fQR" id="ZqI-pq-nLu"/>
             </connections>
             <point key="canvasLocation" x="25" y="162.5"/>
         </tableViewCell>

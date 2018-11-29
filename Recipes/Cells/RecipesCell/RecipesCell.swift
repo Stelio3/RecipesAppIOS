@@ -10,8 +10,8 @@ import UIKit
 
 class RecipesCell: UITableViewCell {
 
-    @IBOutlet weak var titleLbl:UILabel!
-    @IBOutlet weak var foodImg:UIImageView!
+    @IBOutlet weak var trecipeLbl:UILabel!
+    @IBOutlet weak var recipeImg:UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
