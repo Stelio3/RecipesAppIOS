@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window{
             let categoriesVC = CategoriesViewController()
-            window.rootViewController = categoriesVC
+            let navigationController = UINavigationController(rootViewController: categoriesVC)
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
         // Override point for customization after application launch.
