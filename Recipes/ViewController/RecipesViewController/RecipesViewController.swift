@@ -13,17 +13,22 @@ class RecipesViewController: UIViewController {
     @IBOutlet weak var tableView:UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
-    internal var recipes: [Recipes] = []
+    internal var recipesfiltered: [Recipes] = []
     internal var allRecipes: [Recipes] = []
+    internal var recipesTitle:String!
     
+    convenience init(recipe:[Recipes], recipesTitle:String){
+        self.init()
+        self.recipesTitle = recipesTitle
+        self.allRecipes = recipe
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Recipes"
-        loadAllOptions()
+        title = recipesTitle + " recipes"
         registerCells()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Buscar..."
+        searchController.searchBar.placeholder = "Search..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -42,11 +47,11 @@ class RecipesViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
     internal func filterContentForSearchText(searchText: String){
-        /*filteredPosts = posts.filter({ (aPost: Post) -> Bool in
-            if let postId = Int(searchText){
-                return (postId == aPost.id)
+        /*recipesfiltered = allRecipes.filter({ (arecipes: Recipes) -> Bool in
+            if let recipesSearch = String(searchText){
+                return (recipesSearch == arecipes.title)
             }
-            return aPost.title.lowercased().contains((searchText.lowercased()))
+            return arecipes.title.lowercased().contains((searchText.lowercased()))
         })
         tableView.reloadData()*/
     }
@@ -55,28 +60,12 @@ class RecipesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    private func loadAllOptions(){
-        let shellfish = Recipes(title: "Shellfish",imageFood: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gambas_al_ajillo.jpg/220px-Gambas_al_ajillo.jpg")
-        let desserts = Recipes(title: "Desserts", imageFood: "https://png.pngtree.com/element_origin_min_pic/16/10/03/1857f22e5a165d6.jpg")
-        let meast = Recipes(title: "Meats", imageFood: "https://static1.squarespace.com/static/5488b7b8e4b0563d578927fe/579bba96e3df28850502dc24/57a0cd569de4bbbd26c57de3/1470156163680/Shelburne+Meat+Market-97.JPG?format=1500w")
-        let pasta = Recipes(title: "Pasta", imageFood: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Farfalle_Pasta.JPG")
-        
-        allRecipes.append(shellfish)
-        allRecipes.append(desserts)
-        allRecipes.append(meast)
-        allRecipes.append(pasta)
-        recipes.append(shellfish)
-        recipes.append(desserts)
-        recipes.append(meast)
-        recipes.append(pasta)
-        
-    }
 
 }
 extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         if isFiltering(){
-            return recipes.count
+            return recipesfiltered.count
         }
         return allRecipes.count
     }
@@ -87,7 +76,7 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RecipesCell = (tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? RecipesCell)!
         if isFiltering(){
-            let cellRow = recipes[indexPath.row]
+            let cellRow = recipesfiltered[indexPath.row]
             cell.trecipeLbl.text = cellRow.title
             cell.recipeImg.sd_setImage(with: URL (string:cellRow.imageFood), placeholderImage: nil, completed: nil)
         }else{

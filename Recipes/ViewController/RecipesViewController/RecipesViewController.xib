@@ -21,9 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UPB-3Y-Cip">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UPB-3Y-Cip">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="aFi-gV-VaL"/>
@@ -32,6 +31,12 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UPB-3Y-Cip" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XjC-in-cAN"/>
+                <constraint firstItem="UPB-3Y-Cip" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ozd-bW-Y61"/>
+                <constraint firstItem="UPB-3Y-Cip" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vDH-tg-x2d"/>
+                <constraint firstItem="UPB-3Y-Cip" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xI2-8U-dVh"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>

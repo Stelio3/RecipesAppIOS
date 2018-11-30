@@ -9,10 +9,12 @@
 import Foundation
 class Categories {
     var title: String!
+    var recipe:[Recipes]
     var imageFood: String!
     var description: String!
     
-    init(title: String, imageFood: String, description: String) {
+    init(title: String, recipe: [Recipes], imageFood: String, description: String) {
+        self.recipe = recipe
         self.title = title
         self.imageFood = imageFood
         self.description = description

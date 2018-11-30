@@ -11,6 +11,7 @@ import UIKit
 class CategoriesCell: UITableViewCell {
 
     @IBOutlet weak var titleLbl:UILabel!
+    @IBOutlet weak var recipesCount:UILabel!
     @IBOutlet weak var descriptionlbl:UILabel!
     @IBOutlet weak var foodImg:UIImageView!
     
