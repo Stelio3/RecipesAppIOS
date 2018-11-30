@@ -11,6 +11,7 @@ import UIKit
 class RecipesCell: UITableViewCell {
 
     @IBOutlet weak var trecipeLbl:UILabel!
+    @IBOutlet weak var dificultrecipeLbl:UILabel!
     @IBOutlet weak var recipeImg:UIImageView!
     
     override func awakeFromNib() {

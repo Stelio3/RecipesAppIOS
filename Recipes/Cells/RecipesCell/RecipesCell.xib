@@ -27,7 +27,18 @@
                         <rect key="frame" x="16" y="11" width="288" height="48"/>
                         <color key="backgroundColor" red="0.92171031475840026" green="0.52127664935815876" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="48" id="A2J-Zo-wOM"/>
+                            <constraint firstAttribute="height" constant="48" id="ZB5-V2-TJd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-qo-k8E">
+                        <rect key="frame" x="218" y="216" width="86" height="38"/>
+                        <color key="backgroundColor" red="1" green="0.45736353940000002" blue="0.48485249380000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="V8p-CG-hMF"/>
+                            <constraint firstAttribute="width" constant="86" id="cSD-s8-0fO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <nil key="textColor"/>
@@ -35,13 +46,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="leading" secondItem="n1t-n7-fQR" secondAttribute="leading" id="FpN-fo-Tnu"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Hsf-to-ejK"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="MFV-Ki-6tE"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Q8Q-sF-VvO"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="top" secondItem="n1t-n7-fQR" secondAttribute="top" id="WS6-Ww-Ftq"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XKD-Fo-fQW"/>
-                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="trailing" secondItem="n1t-n7-fQR" secondAttribute="trailing" id="aTS-Uf-aGP"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GG8-mG-Pal"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="bottom" secondItem="qVa-qo-k8E" secondAttribute="bottom" id="GWi-Lk-1sT"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="trailing" secondItem="qVa-qo-k8E" secondAttribute="trailing" id="Xf0-Nl-Ual"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="alr-2k-KF9"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="leading" secondItem="n1t-n7-fQR" secondAttribute="leading" id="myf-3j-I08"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="trailing" secondItem="n1t-n7-fQR" secondAttribute="trailing" id="oCt-lh-G48"/>
+                    <constraint firstItem="n1t-n7-fQR" firstAttribute="top" secondItem="31y-Qz-Cf2" secondAttribute="top" id="otS-g9-1Ch"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="txP-c3-Hx9"/>
+                    <constraint firstItem="31y-Qz-Cf2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wfD-zz-FQA"/>
                 </constraints>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="RecipesCell">
@@ -50,6 +63,7 @@
             </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dificultrecipeLbl" destination="qVa-qo-k8E" id="kP3-ZK-fKK"/>
                 <outlet property="recipeImg" destination="31y-Qz-Cf2" id="Zln-ad-6aH"/>
                 <outlet property="trecipeLbl" destination="n1t-n7-fQR" id="ZqI-pq-nLu"/>
             </connections>

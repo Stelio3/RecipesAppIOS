@@ -24,7 +24,7 @@ class RecipesViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = recipesTitle + " recipes"
+        title = recipesTitle
         registerCells()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -47,13 +47,10 @@ class RecipesViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
     internal func filterContentForSearchText(searchText: String){
-        /*recipesfiltered = allRecipes.filter({ (arecipes: Recipes) -> Bool in
-            if let recipesSearch = String(searchText){
-                return (recipesSearch == arecipes.title)
-            }
+        recipesfiltered = allRecipes.filter({ (arecipes: Recipes) -> Bool in
             return arecipes.title.lowercased().contains((searchText.lowercased()))
         })
-        tableView.reloadData()*/
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,10 +75,12 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         if isFiltering(){
             let cellRow = recipesfiltered[indexPath.row]
             cell.trecipeLbl.text = cellRow.title
+            cell.dificultrecipeLbl.text = cellRow.dificult
             cell.recipeImg.sd_setImage(with: URL (string:cellRow.imageFood), placeholderImage: nil, completed: nil)
         }else{
             let cellgo = allRecipes[indexPath.row]
             cell.trecipeLbl.text = cellgo.title
+            cell.dificultrecipeLbl.text = cellgo.dificult
             cell.recipeImg.sd_setImage(with: URL (string:cellgo.imageFood), placeholderImage: nil, completed: nil)
         }
         return cell
@@ -90,10 +89,14 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         return (allRecipes.count > 0)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let row = indexPath.row
-        let myPost = allRecipes[row]
-        let commentsVC = CommentsPostViewController(postId: myPost.id)
-        navigationController?.pushViewController(commentsVC, animated: true)*/
+        let title = allRecipes[indexPath.row].title
+        let image = allRecipes[indexPath.row].imageFood
+        let description = allRecipes[indexPath.row].description
+        let ingredients = allRecipes[indexPath.row].ingredients
+        let time = allRecipes[indexPath.row].time
+        let dificult = allRecipes[indexPath.row].dificult
+        let recipesVC = DetailsRecipeViewController(recipesTitle: title!,recipesImg: image!, recipesDescription: description!, recipesIngredients: ingredients!, recipesTime: time!, recipesDificult: dificult!)
+        navigationController?.pushViewController(recipesVC, animated: true)
     }
 }
 extension RecipesViewController: UISearchResultsUpdating{
