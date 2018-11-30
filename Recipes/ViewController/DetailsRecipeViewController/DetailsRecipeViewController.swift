@@ -10,6 +10,7 @@ import UIKit
 
 class DetailsRecipeViewController: UIViewController {
 
+    @IBOutlet weak var btnMapa:UIButton!
     @IBOutlet weak var lblrecipesDescription:UITextView!
     @IBOutlet weak var lblrecipesIngredients:UITextView!
     @IBOutlet weak var lblrecipesTime:UILabel!
@@ -35,6 +36,7 @@ class DetailsRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = recipesTitle
+        btnMapa.layer.cornerRadius = 30
         self.recipeImg.sd_setImage(with: URL (string:recipesImg), placeholderImage: nil, completed: nil)
         self.lblrecipesDescription.text = recipesDescription
         self.lblrecipesIngredients.text = recipesIngredients
