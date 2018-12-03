@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Information of the CategoriesCell
 class CategoriesCell: UITableViewCell {
 
     @IBOutlet weak var titleLbl:UILabel!

@@ -17,6 +17,8 @@
 		795856F221AEC2F800EF6E2F /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795856F021AEC2F800EF6E2F /* CategoriesCell.xib */; };
 		795856F521AECAA400EF6E2F /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795856F421AECAA400EF6E2F /* Categories.swift */; };
 		7995E9B821B187550013E40D /* DetailsRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7995E9B721B187550013E40D /* DetailsRecipeViewController.xib */; };
+		79C0F7EF21B555C100497F84 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C0F7ED21B555C100497F84 /* MapViewController.swift */; };
+		79C0F7F021B555C100497F84 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C0F7EE21B555C100497F84 /* MapViewController.xib */; };
 		79CCD10221B06D1E004F3309 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCD10021B06D1E004F3309 /* RecipesViewController.swift */; };
 		79CCD10321B06D1E004F3309 /* RecipesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CCD10121B06D1E004F3309 /* RecipesViewController.xib */; };
 		79CCD10521B07341004F3309 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCD10421B07341004F3309 /* Recipes.swift */; };
@@ -68,6 +70,8 @@
 		795856F021AEC2F800EF6E2F /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
 		795856F421AECAA400EF6E2F /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		7995E9B721B187550013E40D /* DetailsRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsRecipeViewController.xib; sourceTree = "<group>"; };
+		79C0F7ED21B555C100497F84 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		79C0F7EE21B555C100497F84 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		79CCD10021B06D1E004F3309 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		79CCD10121B06D1E004F3309 /* RecipesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesViewController.xib; sourceTree = "<group>"; };
 		79CCD10421B07341004F3309 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		795856B721AEB48A00EF6E2F /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				79C0F7EC21B555A200497F84 /* MapViewController */,
 				795856F321AEC96000EF6E2F /* Model */,
 				795856ED21AEC16400EF6E2F /* Cells */,
 				795856E821AEBEE300EF6E2F /* ViewController */,
@@ -204,6 +209,15 @@
 				79CCD10421B07341004F3309 /* Recipes.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		79C0F7EC21B555A200497F84 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				79C0F7ED21B555C100497F84 /* MapViewController.swift */,
+				79C0F7EE21B555C100497F84 /* MapViewController.xib */,
+			);
+			path = MapViewController;
 			sourceTree = "<group>";
 		};
 		79CCD0FF21B06CF6004F3309 /* RecipesViewController */ = {
@@ -368,6 +382,7 @@
 				79CCD10321B06D1E004F3309 /* RecipesViewController.xib in Resources */,
 				795856EC21AEBFF000EF6E2F /* CategoriesViewController.xib in Resources */,
 				795856C021AEB48B00EF6E2F /* Assets.xcassets in Resources */,
+				79C0F7F021B555C100497F84 /* MapViewController.xib in Resources */,
 				795856F221AEC2F800EF6E2F /* CategoriesCell.xib in Resources */,
 				7995E9B821B187550013E40D /* DetailsRecipeViewController.xib in Resources */,
 			);
@@ -473,6 +488,7 @@
 				79CCD10521B07341004F3309 /* Recipes.swift in Sources */,
 				795856F521AECAA400EF6E2F /* Categories.swift in Sources */,
 				79EC417E21B1364F001754D5 /* DetailsRecipeViewController.swift in Sources */,
+				79C0F7EF21B555C100497F84 /* MapViewController.swift in Sources */,
 				795856EB21AEBFF000EF6E2F /* CategoriesViewController.swift in Sources */,
 				79CCD10221B06D1E004F3309 /* RecipesViewController.swift in Sources */,
 				79CCD10921B07489004F3309 /* RecipesCell.swift in Sources */,

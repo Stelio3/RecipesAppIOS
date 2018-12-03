@@ -22,8 +22,12 @@ class DetailsRecipeViewController: UIViewController {
     internal var recipesIngredients:String!
     internal var recipesTime:String!
     internal var recipesDificult:String!
+    internal var lon:Double!
+    internal var lat:Double!
     
-    convenience init(recipesTitle:String, recipesImg:String, recipesDescription:String, recipesIngredients:String, recipesTime:String, recipesDificult:String){
+    
+    //Information from RecipesViewController
+    convenience init(recipesTitle:String, recipesImg:String, recipesDescription:String, recipesIngredients:String, recipesTime:String, recipesDificult:String, lon: Double, lat: Double){
         self.init()
         self.recipesTitle = recipesTitle
         self.recipesImg = recipesImg
@@ -31,10 +35,14 @@ class DetailsRecipeViewController: UIViewController {
         self.recipesIngredients = recipesIngredients
         self.recipesTime = recipesTime
         self.recipesDificult = recipesDificult
+        self.lon = lon
+        self.lat = lat
+        self.title = NSLocalizedString("title_settings", comment: "")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         //Give the title of each recipes
         title = recipesTitle
         btnMapa.layer.cornerRadius = 30
         self.recipeImg.sd_setImage(with: URL (string:recipesImg), placeholderImage: nil, completed: nil)
@@ -48,5 +56,9 @@ class DetailsRecipeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    //IBAction for Show Maps
+    @IBAction func showMaps(){
+        let mapVC = MapViewController(lat: lat, lng: lon)
+        navigationController?.pushViewController(mapVC, animated: true)
+    }
 }

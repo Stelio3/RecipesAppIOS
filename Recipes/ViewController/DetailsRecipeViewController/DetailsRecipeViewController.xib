@@ -44,6 +44,9 @@
                     <rect key="frame" x="16" y="617" width="343" height="30"/>
                     <color key="backgroundColor" red="1" green="0.89532856080000001" blue="0.88375309120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="mapa"/>
+                    <connections>
+                        <action selector="showMaps" destination="-1" eventType="touchUpInside" id="k9T-jQ-Agj"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tiempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-z7-orC">
                     <rect key="frame" x="16" y="574" width="53" height="21"/>

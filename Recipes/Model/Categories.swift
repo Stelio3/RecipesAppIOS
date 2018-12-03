@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//Model Categories
 class Categories {
     var title: String!
     var recipe:[Recipes]

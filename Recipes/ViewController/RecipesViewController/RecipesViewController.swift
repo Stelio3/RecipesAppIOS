@@ -17,6 +17,7 @@ class RecipesViewController: UIViewController {
     internal var allRecipes: [Recipes] = []
     internal var recipesTitle:String!
     
+    //Information from CategoriesViewController
     convenience init(recipe:[Recipes], recipesTitle:String){
         self.init()
         self.recipesTitle = recipesTitle
@@ -24,6 +25,7 @@ class RecipesViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Give the title of each categories
         title = recipesTitle
         registerCells()
         searchController.searchResultsUpdater = self
@@ -34,12 +36,13 @@ class RecipesViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         // Do any additional setup after loading the view.
     }
+    //Method for Cells registration
     private func registerCells(){
         let identifier = "RecipesCell"
         let cellNib = UINib(nibName: identifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: identifier)
     }
-    
+    //Internal funcions for the searchBar
     internal func searchBarIsEmpty() -> Bool{
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -59,6 +62,7 @@ class RecipesViewController: UIViewController {
     }
 
 }
+//extension for creating tableView
 extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         if isFiltering(){
@@ -95,10 +99,13 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
         let ingredients = allRecipes[indexPath.row].ingredients
         let time = allRecipes[indexPath.row].time
         let dificult = allRecipes[indexPath.row].dificult
-        let recipesVC = DetailsRecipeViewController(recipesTitle: title!,recipesImg: image!, recipesDescription: description!, recipesIngredients: ingredients!, recipesTime: time!, recipesDificult: dificult!)
+        let lon = allRecipes[indexPath.row].lon
+        let lat = allRecipes[indexPath.row].lat
+        let recipesVC = DetailsRecipeViewController(recipesTitle: title!,recipesImg: image!, recipesDescription: description!, recipesIngredients: ingredients!, recipesTime: time!, recipesDificult: dificult!, lon: lon!, lat: lat!)
         navigationController?.pushViewController(recipesVC, animated: true)
     }
 }
+//extension for SearchResults
 extension RecipesViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         filterContentForSearchText(searchText: searchController.searchBar.text!)

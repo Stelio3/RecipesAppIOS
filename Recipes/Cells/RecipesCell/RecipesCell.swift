@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Information of the RecipesCell
 class RecipesCell: UITableViewCell {
 
     @IBOutlet weak var trecipeLbl:UILabel!
